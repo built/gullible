@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cd /nml/gullible
+
+rm -rf gullible
+rm gullible_dictionary.zip
+
+mkdir -p gullible
+mkdir gullible/icons
+
+cp manifest.json gullible/manifest.json
+cp eula.txt gullible/eula.txt
+cp icons/logo_16x16.png	gullible/icons/logo_16x16.png
+cp icons/logo_19x19.png	gullible/icons/logo_19x19.png
+cp icons/logo_48x48.png	gullible/icons/logo_48x48.png
+cp icons/logo_128x128.png gullible/icons/logo_128x128.png
+
+
+cp popup.html gullible/popup.html
+cp popup.js gullible/popup.js
+cp gullible.js gullible/gullible.js
+
+cp jquery.js gullible/jquery.js
+cp underscore-min.js gullible/underscore-min.js
+
+zip -r gullible_dictionary.zip gullible/*
+
+rm -rf gullible/
